@@ -1,0 +1,373 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Icyl Kaye ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #ff758c,
+                #ff7eb3,
+                #a18cd1
+            );
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 25px;
+            animation: floatUp linear infinite;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main card */
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+            padding: 45px 30px;
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.2);
+
+            z-index: 10;
+        }
+
+        .heart-icon {
+            font-size: 70px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        h1 {
+            color: #ff4f81;
+            font-size: 30px;
+            margin: 20px 0 10px;
+        }
+
+        .name {
+            color: #e63972;
+            font-weight: bold;
+        }
+
+        p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .question {
+            margin: 25px 0;
+            font-size: 23px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        button {
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        #yesButton {
+            background: #ff4f81;
+            color: white;
+
+            box-shadow:
+                0 5px 20px rgba(255, 79, 129, 0.4);
+
+            transition: 0.3s;
+        }
+
+        #yesButton:hover {
+            transform: scale(1.1);
+            background: #ff2f6d;
+        }
+
+        #noButton {
+            margin-left: 15px;
+            background: #ddd;
+            color: #777;
+        }
+
+        #noButton:hover {
+            background: #bbb;
+        }
+
+        /* YES message */
+        #loveMessage {
+            display: none;
+        }
+
+        #loveMessage h2 {
+            color: #ff3f78;
+            font-size: 32px;
+        }
+
+        .big-heart {
+            font-size: 90px;
+            animation: heartbeat 1s infinite;
+        }
+
+        .signature {
+            margin-top: 25px;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            top: -20px;
+            z-index: 100;
+
+            animation: fall 3s linear forwards;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            to {
+                transform: translateY(110vh) rotate(720deg);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .question {
+                font-size: 20px;
+            }
+
+            .heart-icon {
+                font-size: 55px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="heart" style="left:5%; animation-duration:8s;">❤️</div>
+    <div class="heart" style="left:15%; animation-duration:11s; animation-delay:2s;">💗</div>
+    <div class="heart" style="left:30%; animation-duration:9s; animation-delay:4s;">💕</div>
+    <div class="heart" style="left:50%; animation-duration:12s; animation-delay:1s;">❤️</div>
+    <div class="heart" style="left:70%; animation-duration:10s; animation-delay:3s;">💖</div>
+    <div class="heart" style="left:90%; animation-duration:9s; animation-delay:5s;">💗</div>
+
+
+    <!-- Question -->
+    <div class="container">
+
+        <div id="questionSection">
+
+            <div class="heart-icon">
+                💗
+            </div>
+
+            <h1>
+                Hi, <span class="name">Icyl Kaye Sontillano</span> ❤️
+            </h1>
+
+            <p>
+                I've been thinking about this for quite some time...
+            </p>
+
+            <div class="question">
+                Will you be my girlfriend? 🥺❤️
+            </div>
+
+            <div class="buttons">
+
+                <button id="yesButton" onclick="sayYes()">
+                    YES ❤️
+                </button>
+
+                <button id="noButton" onclick="nope()">
+                    NO 😭
+                </button>
+
+            </div>
+
+            <div class="signature">
+                — From someone who will love every version of you ♥️
+            </div>
+
+        </div>
+
+
+        <!-- After YES -->
+        <div id="loveMessage">
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+            <h2>
+                YAAAY! 😭❤️
+            </h2>
+
+            <p>
+                You said YES! 🥹 and I dont take NO for an answer 🤪😚
+            </p>
+
+            <p>
+                Thank you, Kaye. mwamwachupchup 😚❤️
+                <br>
+                I'll do my very best for us, let's figure things out together.
+            </p>
+
+            <p>
+                Here's to us. 💕
+            </p>
+
+            <div class="signature">
+                — Koko❤️ I LOVE YOU KAYE!!♥️
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // YES BUTTON
+        function sayYes() {
+
+            document.getElementById("questionSection").style.display = "none";
+
+            document.getElementById("loveMessage").style.display = "block";
+
+            createConfetti();
+        }
+
+
+        // NO BUTTON
+        // Pressing NO does absolutely nothing.
+        function nope() {
+
+            alert("Nice try 😭❤️\nThere is only one correct answer.");
+
+        }
+
+
+        // CONFETTI
+        function createConfetti() {
+
+            const symbols = [
+                "❤️",
+                "💗",
+                "💕",
+                "💖",
+                "💝",
+                "✨"
+            ];
+
+            for (let i = 0; i < 100; i++) {
+
+                const confetti =
+                    document.createElement("div");
+
+                confetti.classList.add("confetti");
+
+                confetti.innerHTML =
+                    symbols[
+                        Math.floor(
+                            Math.random() * symbols.length
+                        )
+                    ];
+
+                confetti.style.left =
+                    Math.random() * 100 + "vw";
+
+                confetti.style.fontSize =
+                    (Math.random() * 15 + 10) + "px";
+
+                confetti.style.animationDuration =
+                    (Math.random() * 2 + 2) + "s";
+
+                document.body.appendChild(confetti);
+
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+```
